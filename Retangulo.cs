@@ -11,7 +11,7 @@ namespace Grafico
     {
         int altura, largura;
 
-        public Retangulo(int x, int y, Color cor, int largura, int altura) : 
+        public Retangulo(int x, int y, int largura, int altura, Color cor) : 
             base(x, y, cor)
         {
             Largura = largura;

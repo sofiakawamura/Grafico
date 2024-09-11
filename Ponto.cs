@@ -70,6 +70,7 @@ namespace Grafico
             return cadeia.Substring(0, quantasPosicoes); // corta, se necessário, para
                                                          // tamanho máximo
         }
+
         public String transformaString(String valor, int quantasPosicoes)
         {
             String cadeia = valor + "";
@@ -78,6 +79,7 @@ namespace Grafico
             return cadeia.Substring(0, quantasPosicoes); // corta, se necessário, para
                                                          // tamanho máximo
         }
+
         public override String ToString()
         {
             return  transformaString("p", 5) +

@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Grafico
 {
-    class Polilinha : Ponto
+    class Polilinha // : Ponto
     {
 
     }
