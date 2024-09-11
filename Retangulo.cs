@@ -9,22 +9,53 @@ namespace Grafico
 {
     class Retangulo : Ponto
     {
+        int altura, largura;
+
+        public Retangulo(int x, int y, Color cor, int largura, int altura) : 
+            base(x, y, cor)
+        {
+            Largura = largura;
+            Altura = altura;
+        }
+
+        public int Largura
+        {
+            get { return largura; }
+            set
+            {
+                if (value < 0)
+                    largura = largura * (-1);
+                largura = value;
+            }
+        }
+
+        public int Altura
+        {
+            get { return altura; }
+            set
+            {
+                if (value < 0)
+                    altura = altura * (-1);
+                altura = value;
+            }
+        }
+
         public override void Desenhar(Color corDesenho, Graphics g)
         {
             Pen pen = new Pen(corDesenho);
-            // g.DrawRectangle()
+            g.DrawRectangle(pen, base.X, base.Y, largura, altura);
         }
 
         public override string ToString()
         {
-            return transformaString("l", 5) +
+            return transformaString("r", 5) +
                     transformaString(base.X, 5) +
                     transformaString(base.Y, 5) +
                     transformaString(Cor.R, 5) +
                     transformaString(Cor.G, 5) +
                     transformaString(Cor.B, 5) +
-                    transformaString(pontoFinal.X, 5) +
-                    transformaString(pontoFinal.Y, 5);
+                    transformaString(largura, 5) +
+                    transformaString(altura, 5);
         }
     }
 }

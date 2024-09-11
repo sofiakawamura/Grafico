@@ -88,7 +88,9 @@ namespace Grafico
                                 int raio1 = Convert.ToInt32(linha.Substring(30, 5).Trim());
                                 int raio2 = Convert.ToInt32(linha.Substring(35, 5).Trim());
                                 break;
-                            
+                            case 'r':
+                                // 
+                                break;
 
                         }
                     }
