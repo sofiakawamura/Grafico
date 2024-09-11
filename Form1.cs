@@ -84,6 +84,12 @@ namespace Grafico
                                 int raio = Convert.ToInt32(linha.Substring(30, 5).Trim());
                                 figuras.InserirAposFim(new Circulo(xBase, yBase, raio, cor));
                                 break;
+                            case 'e': // figura é uma elipse 
+                                int raio1 = Convert.ToInt32(linha.Substring(30, 5).Trim());
+                                int raio2 = Convert.ToInt32(linha.Substring(35, 5).Trim());
+                                break;
+                            
+
                         }
                     }
 
@@ -161,7 +167,6 @@ namespace Grafico
                 }
 
                 arquivo.Close();
-                
             }
         }
     }

@@ -48,5 +48,17 @@ namespace Grafico
             g.DrawEllipse(pen, base.X - raio1, base.Y - raio2,    // centro - raio
                                 2 * raio1, 2 * raio2);
         }
+
+        public override String ToString()
+        {
+            return transformaString("e", 5) +
+                    transformaString(X, 5) +
+                    transformaString(Y, 5) +
+                    transformaString(Cor.R, 5) +
+                    transformaString(Cor.G, 5) +
+                    transformaString(Cor.B, 5) +
+                    transformaString(raio1, 5) +
+                    transformaString(raio2, 5);
+        }
     }
 }
