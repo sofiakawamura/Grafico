@@ -23,5 +23,18 @@ namespace Grafico
             g.DrawLine(pen, base.X,       base.Y,        // ponto inicial
                             pontoFinal.X, pontoFinal.Y);
         }
+
+        public override string ToString()
+        {
+            return transformaString("l", 5) +
+                    transformaString(base.X, 5) +
+                    transformaString(base.Y, 5) +
+                    transformaString(Cor.R, 5) +
+                    transformaString(Cor.G, 5) +
+                    transformaString(Cor.B, 5) +
+                    transformaString(pontoFinal.X, 5) +
+                    transformaString(pontoFinal.Y, 5);
+        }
+
     }
 }
