@@ -1,0 +1,10 @@
+C:\Users\u23157\Documents\Grafico\bin\Debug\Grafico.exe.config
+C:\Users\u23157\Documents\Grafico\bin\Debug\Grafico.exe
+C:\Users\u23157\Documents\Grafico\bin\Debug\Grafico.pdb
+C:\Users\u23157\Documents\Grafico\obj\Debug\Grafico.csproj.AssemblyReference.cache
+C:\Users\u23157\Documents\Grafico\obj\Debug\Grafico.frmGrafico.resources
+C:\Users\u23157\Documents\Grafico\obj\Debug\Grafico.Properties.Resources.resources
+C:\Users\u23157\Documents\Grafico\obj\Debug\Grafico.csproj.GenerateResource.cache
+C:\Users\u23157\Documents\Grafico\obj\Debug\Grafico.csproj.CoreCompileInputs.cache
+C:\Users\u23157\Documents\Grafico\obj\Debug\Grafico.exe
+C:\Users\u23157\Documents\Grafico\obj\Debug\Grafico.pdb
