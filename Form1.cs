@@ -27,10 +27,12 @@ namespace Grafico
         bool esperaRaioCirculo = false;
         bool esperaCentroElipse = false;
         bool esperaRaio1Elipse = false;
-        bool esperaRaio2Elipse = false;
         int raio1;
+        bool esperaRaio2Elipse = false;
         bool esperaInicioRetangulo = false;
         bool esperaFimRetangulo = false;
+        bool esperaInicioPolilinha = false;
+        bool esperaPolilinha = false;
 
         Color corAtual = Color.Black;
         private static Ponto p1 = new Ponto(0, 0, Color.Black);
@@ -46,7 +48,9 @@ namespace Grafico
             esperaRaio1Elipse = false; 
             esperaRaio2Elipse = false;
             esperaInicioRetangulo = false;
-            esperaFimRetangulo = false; 
+            esperaFimRetangulo = false;
+            esperaInicioPolilinha = false;
+            esperaPolilinha = false;
         }
 
         private void limparFiguras()
@@ -110,10 +114,23 @@ namespace Grafico
                             case 'e': // figura é uma elipse 
                                 int raio1 = Convert.ToInt32(linha.Substring(30, 5).Trim());
                                 int raio2 = Convert.ToInt32(linha.Substring(35, 5).Trim());
+                                figuras.InserirAposFim(new Elipse(xBase, yBase, raio1, raio2, cor));
                                 break;
-                            case 'r':
+                            case 'r': // figura é um retângulo
                                 int largura = Convert.ToInt32(linha.Substring(30, 5).Trim());
                                 int altura = Convert.ToInt32(linha.Substring(35, 5).Trim());
+                                figuras.InserirAposFim(new Retangulo(xBase, yBase, largura, altura, cor));
+                                break;
+                            case 'm': // figura é uma linha múltipla (polilinha)
+                                Polilinha polilinha = new Polilinha(xBase, yBase, cor);
+                                int qtosPontos = Convert.ToInt32(linha.Substring(30, 5).Trim());
+                                for (int i = 0; i < qtosPontos; i++)
+                                {
+                                    int xPonto = Convert.ToInt32(linha.Substring((35+(10*i)), 5).Trim());
+                                    int yPonto = Convert.ToInt32(linha.Substring((40+(10*i)), 5).Trim());
+                                    polilinha.Pontos.InserirAposFim(new Ponto(xPonto, yPonto, cor));
+                                }
+                                figuras.InserirAposFim(polilinha);
                                 break;
                         }
                     }
@@ -135,14 +152,15 @@ namespace Grafico
             {
                 StreamWriter arquivo = new StreamWriter(dlgSalvar.FileName);
 
-                // ???
                 int xInfEsq = pbAreaDesenho.Left;
                 int yInfEsq = pbAreaDesenho.Bottom;
                 int xSupDir = pbAreaDesenho.Right;
                 int ySupDir = pbAreaDesenho.Top;
 
-                string linha = xInfEsq.ToString().PadLeft(10, '0') + yInfEsq.ToString().PadLeft(5, '0') +
-                                xSupDir.ToString().PadLeft(5, '0') + ySupDir.ToString().PadLeft(5, '0');
+                string linha =  xInfEsq.ToString().PadLeft(10, '0') + 
+                                yInfEsq.ToString().PadLeft(5, '0') +
+                                xSupDir.ToString().PadLeft(5, '0') + 
+                                ySupDir.ToString().PadLeft(5, '0');
                 arquivo.WriteLine(linha);
 
                 var atual = figuras.Primeiro;
@@ -220,7 +238,6 @@ namespace Grafico
             }
             else if (esperaRaio1Elipse)
             {
-                // raio 1 ???
                 raio1 = (int)Math.Round(Math.Sqrt(Math.Pow(e.X - p1.X, 2) + Math.Pow(e.Y - p1.Y, 2)));
                 esperaCentroElipse = false;
                 esperaRaio1Elipse = false;
@@ -271,6 +288,20 @@ namespace Grafico
                 novoRetangulo.Desenhar(novoRetangulo.Cor, pbAreaDesenho.CreateGraphics());
                 stMensagem.Items[1].Text = "sem mensagem";
             }
+            else if (esperaInicioPolilinha)
+            {
+                Polilinha novaPolilinha = new Polilinha(e.X, e.Y, corAtual);
+                figuras.InserirAposFim(novaPolilinha);
+                esperaInicioPolilinha = false;
+                esperaPolilinha = true;
+                stMensagem.Items[1].Text = "clique no próximo ponto da linha";
+            }
+            else if (esperaPolilinha)
+            {
+                Polilinha polilinha = (Polilinha)figuras.Ultimo.Info;
+                polilinha.Pontos.InserirAposFim(new Ponto(e.X, e.Y, corAtual));
+                polilinha.Desenhar(polilinha.Cor, pbAreaDesenho.CreateGraphics());
+            }
         }
 
         private void btnPonto_Click(object sender, EventArgs e)
@@ -306,6 +337,32 @@ namespace Grafico
             stMensagem.Items[1].Text = "clique no canto superior esquerdo do retângulo";
             limparEsperas();
             esperaInicioRetangulo = true;
+        }
+
+        private void btnPolilinha_Click(object sender, EventArgs e)
+        {
+            stMensagem.Items[1].Text = "clique no ponto inicial da polilinha";
+            limparEsperas();
+            esperaInicioPolilinha = true;
+        }
+
+        private void btnCor_Click(object sender, EventArgs e)
+        {
+            if (dlgCor.ShowDialog() == DialogResult.OK)
+            {
+                corAtual = dlgCor.Color;
+            }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            limparFiguras();
+            pbAreaDesenho.Invalidate();
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

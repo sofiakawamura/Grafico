@@ -118,5 +118,8 @@
   <ItemGroup>
     <None Include="Icones\sair.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\limpar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
