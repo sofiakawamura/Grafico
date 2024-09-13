@@ -46,5 +46,12 @@ namespace Grafico
                     transformaString(Cor.B, 5) +
                     transformaString(raio, 5);
         }
+
+        public int CompareTo(Circulo other)
+        {
+            if (base.CompareTo(other) != 0)
+                return base.CompareTo(other);
+            return raio - other.Raio;
+        }
     }
 }

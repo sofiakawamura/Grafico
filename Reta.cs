@@ -35,5 +35,12 @@ namespace Grafico
                     transformaString(pontoFinal.X, 5) +
                     transformaString(pontoFinal.Y, 5);
         }
+
+        public int CompareTo(Reta other)
+        {
+            if (base.CompareTo(other) != 0)
+                return base.CompareTo(other);
+            return pontoFinal.CompareTo(other.pontoFinal);
+        }
     }
 }

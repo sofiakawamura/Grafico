@@ -57,5 +57,14 @@ namespace Grafico
                     transformaString(largura, 5) +
                     transformaString(altura, 5);
         }
+
+        public int CompareTo(Retangulo other)
+        {
+            if (base.CompareTo(other) != 0)
+                return base.CompareTo(other);
+            if (largura - other.largura == 0)
+                return altura - other.altura;
+            return largura - other.largura;
+        }
     }
 }

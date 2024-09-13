@@ -60,5 +60,14 @@ namespace Grafico
                     transformaString(raio1, 5) +
                     transformaString(raio2, 5);
         }
+
+        public int CompareTo(Elipse other)
+        {
+            if (base.CompareTo(other) != 0)
+                return base.CompareTo(other);
+            if (raio1 == other.Raio1)
+                return raio2 - other.Raio2;
+            return raio1 - other.Raio1; 
+        }
     }
 }

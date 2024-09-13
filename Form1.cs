@@ -27,7 +27,6 @@ namespace Grafico
         bool esperaRaioCirculo = false;
         bool esperaCentroElipse = false;
         bool esperaRaio1Elipse = false;
-        int raio1;
         bool esperaRaio2Elipse = false;
         bool esperaInicioRetangulo = false;
         bool esperaFimRetangulo = false;
@@ -36,6 +35,7 @@ namespace Grafico
 
         Color corAtual = Color.Black;
         private static Ponto p1 = new Ponto(0, 0, Color.Black);
+        int raio1;
 
         private void limparEsperas()
         {
@@ -57,6 +57,7 @@ namespace Grafico
         {
             figuras = new ListaSimples<Ponto>();
             pbAreaDesenho.Invalidate();
+            limparEsperas();
         }
 
         private void pbAreaDesenho_Paint(object sender, PaintEventArgs e)

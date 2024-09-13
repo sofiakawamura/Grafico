@@ -60,5 +60,27 @@ namespace Grafico
             }
             return cadeia;
         }
+
+        public int CompareTo(Polilinha other)
+        {
+            if (base.CompareTo(other) != 0)
+                return base.CompareTo(other);
+
+            if (pontos.QuantosNos != other.pontos.QuantosNos)
+                return pontos.QuantosNos - other.Pontos.QuantosNos;
+
+            // percorre as listas de pontos e compara cada um deles
+            var atual1 = pontos.Primeiro;
+            var atual2 = pontos.Primeiro;
+            while (atual1 != null)
+            {
+                if (atual1.Info.CompareTo(atual2.Info) == 0)
+                    return 0;
+                atual1 = atual1.Prox;
+                atual2 = atual2.Prox;
+            }
+
+            return 1;
+        }
     }
 }
