@@ -46,6 +46,12 @@ namespace Grafico
             g.DrawRectangle(pen, base.X, base.Y, largura, altura);
         }
 
+        public override void DesenharSelecionadas(Graphics g)
+        {
+            Pen pen = new Pen(Color.Red, 2);
+            g.DrawRectangle(pen, base.X, base.Y, largura, altura);
+        }
+
         public override string ToString()
         {
             return transformaString("r", 5) +

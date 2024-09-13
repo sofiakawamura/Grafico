@@ -54,6 +54,12 @@ namespace Grafico
             g.DrawLine(pen, x, y, x, y);
         }
 
+        public virtual void DesenharSelecionadas(Graphics g)
+        {
+            Pen pen = new Pen(Color.Red, 2);
+            g.DrawLine(pen, x, y, x, y);
+        }
+
         public int CompareTo(Ponto other)
         {
             int diferencaX = X - other.X;

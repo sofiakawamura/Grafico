@@ -49,6 +49,13 @@ namespace Grafico
                                 2 * raio1, 2 * raio2);
         }
 
+        public override void DesenharSelecionadas(Graphics g)
+        {
+            Pen pen = new Pen(Color.Red, 2);
+            g.DrawEllipse(pen, base.X - raio1, base.Y - raio2,  // centro - raio
+                                2 * raio1, 2 * raio2); 
+        }
+
         public override String ToString()
         {
             return transformaString("e", 5) +

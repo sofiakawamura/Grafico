@@ -30,12 +30,29 @@ namespace Grafico
             Pen pen = new Pen(corDesenho);
 
             Ponto inicial = new Ponto(base.X, base.Y, Cor);
+
             var atual = pontos.Primeiro;
             while (atual != null)
             {
                 Ponto final = atual.Info;
                 g.DrawLine(pen, inicial.X, inicial.Y,
                             final.X, final.Y);
+                inicial = final;
+                atual = atual.Prox;
+            }
+        }
+
+        public override void DesenharSelecionadas(Graphics g)
+        {
+            Pen pen = new Pen(Color.Red, 2);
+
+            Ponto inicial = new Ponto(base.X, base.Y, Color.Red);
+
+            var atual = pontos.Primeiro;
+            while (atual != null)
+            {
+                Ponto final = atual.Info;
+                g.DrawLine(pen, inicial.X, inicial.Y, final.X, final.Y);
                 inicial = final;
                 atual = atual.Prox;
             }

@@ -19,6 +19,7 @@ namespace Grafico
         }
 
         private ListaSimples<Ponto> figuras = new ListaSimples<Ponto>();
+        private ListaSimples<Ponto> figurasSelecionadas = new ListaSimples<Ponto>();
 
         bool esperaPonto = false;
         bool esperaInicioReta = false;
@@ -37,7 +38,7 @@ namespace Grafico
         private static Ponto p1 = new Ponto(0, 0, Color.Black);
         int raio1;
 
-        private void limparEsperas()
+        private void LimparEsperas()
         {
             esperaPonto = false;
             esperaInicioReta = false;
@@ -53,22 +54,39 @@ namespace Grafico
             esperaPolilinha = false;
         }
 
-        private void limparFiguras()
+        private void LimparFiguras()
         {
             figuras = new ListaSimples<Ponto>();
+            LimparEsperas();
             pbAreaDesenho.Invalidate();
-            limparEsperas();
+        }
+
+        private void LimparFigurasSelecionadas()
+        {
+            figurasSelecionadas = new ListaSimples<Ponto>();
+            LimparEsperas();
+            pbAreaDesenho.Invalidate();
         }
 
         private void pbAreaDesenho_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics; // acessa contexto gráfico
             var atual = figuras.Primeiro;
+
             while (atual != null)
             {
                 Ponto figuraAtual = atual.Info ;
                 figuraAtual.Desenhar(figuraAtual.Cor, g);
                 atual = atual.Prox;
+            }
+
+            var atualSelecionadas = figurasSelecionadas.Primeiro;
+
+            while (atualSelecionadas != null)
+            {
+                Ponto figuraSelecionadaAtual = atualSelecionadas.Info ;
+                figuraSelecionadaAtual.DesenharSelecionadas(g);
+                atualSelecionadas = atualSelecionadas.Prox;
             }
         }
 
@@ -76,7 +94,7 @@ namespace Grafico
         {
             if (dlgAbrir.ShowDialog() == DialogResult.OK)
             {
-                limparFiguras();
+                LimparFiguras();
                 try
                 {
                     StreamReader arqFiguras = new StreamReader(dlgAbrir.FileName);
@@ -308,42 +326,42 @@ namespace Grafico
         private void btnPonto_Click(object sender, EventArgs e)
         {
             stMensagem.Items[1].Text = "clique no local do ponto desejado";
-            limparEsperas();
+            LimparEsperas();
             esperaPonto = true;
         }
 
         private void btnReta_Click(object sender, EventArgs e)
         {
             stMensagem.Items[1].Text = "clique no local do ponto inicial da reta";
-            limparEsperas();
+            LimparEsperas();
             esperaInicioReta = true;
         }
 
         private void btnCirculo_Click(object sender, EventArgs e)
         {
             stMensagem.Items[1].Text = "clique no local do ponto central do círculo";
-            limparEsperas();
+            LimparEsperas();
             esperaCentroCirculo = true;
         }
 
         private void btnElipse_Click(object sender, EventArgs e)
         {
             stMensagem.Items[1].Text = "clique no local do ponto central da elipse";
-            limparEsperas();
+            LimparEsperas();
             esperaCentroElipse = true;
         }
 
         private void btnRetangulo_Click(object sender, EventArgs e)
         {
             stMensagem.Items[1].Text = "clique no canto superior esquerdo do retângulo";
-            limparEsperas();
+            LimparEsperas();
             esperaInicioRetangulo = true;
         }
 
         private void btnPolilinha_Click(object sender, EventArgs e)
         {
             stMensagem.Items[1].Text = "clique no ponto inicial da polilinha";
-            limparEsperas();
+            LimparEsperas();
             esperaInicioPolilinha = true;
         }
 
@@ -357,7 +375,51 @@ namespace Grafico
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            limparFiguras();
+            LimparFiguras();
+            LimparFigurasSelecionadas();
+            pbAreaDesenho.Invalidate();
+        }
+
+        private void txtPosicaoSelecionar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            // para verificar se a posição (da lista) digitada pelo usuário existe
+            bool indiceExiste =    int.Parse(txtPosicaoSelecionar.Text) < figuras.QuantosNos 
+                                && int.Parse(txtPosicaoSelecionar.Text) >= 0;
+
+            if (!indiceExiste)
+            {
+                MessageBox.Show("Digite uma posição válida!");
+                txtPosicaoSelecionar.Text = string.Empty;
+            }
+
+            else
+            {
+                for (int indice = 0; indice < figuras.QuantosNos; indice++)
+                {
+                    if (indice == int.Parse(txtPosicaoSelecionar.Text))
+                    {
+                        int contador = 0;
+                        var atual = figuras.Primeiro;
+                        while (contador != indice)
+                        {
+                            atual = atual.Prox;
+                            contador++;
+                        }
+
+                        figurasSelecionadas.InserirAposFim(atual.Info);
+                    }
+                }
+            }
+
             pbAreaDesenho.Invalidate();
         }
 

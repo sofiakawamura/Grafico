@@ -32,6 +32,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.stMensagem = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -40,7 +41,7 @@
             this.dlgAbrir = new System.Windows.Forms.OpenFileDialog();
             this.dlgSalvar = new System.Windows.Forms.SaveFileDialog();
             this.dlgCor = new System.Windows.Forms.ColorDialog();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.pbAreaDesenho = new System.Windows.Forms.PictureBox();
             this.btnAbrir = new System.Windows.Forms.ToolStripButton();
             this.btnSalvar = new System.Windows.Forms.ToolStripButton();
@@ -51,8 +52,11 @@
             this.btnRetangulo = new System.Windows.Forms.ToolStripButton();
             this.btnPolilinha = new System.Windows.Forms.ToolStripButton();
             this.btnCor = new System.Windows.Forms.ToolStripButton();
+            this.btnSelecionar = new System.Windows.Forms.ToolStripButton();
+            this.btnDesselecionar = new System.Windows.Forms.ToolStripButton();
             this.btnLimpar = new System.Windows.Forms.ToolStripButton();
             this.btnSair = new System.Windows.Forms.ToolStripButton();
+            this.txtPosicaoSelecionar = new System.Windows.Forms.ToolStripTextBox();
             this.toolStrip1.SuspendLayout();
             this.stMensagem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAreaDesenho)).BeginInit();
@@ -73,6 +77,10 @@
             this.toolStripSeparator2,
             this.btnCor,
             this.toolStripSeparator3,
+            this.txtPosicaoSelecionar,
+            this.btnSelecionar,
+            this.btnDesselecionar,
+            this.toolStripSeparator5,
             this.btnLimpar,
             this.toolStripSeparator4,
             this.btnSair});
@@ -96,6 +104,11 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
             // stMensagem
             // 
@@ -140,10 +153,10 @@
             // 
             this.dlgAbrir.FileName = "openFileDialog1";
             // 
-            // toolStripSeparator4
+            // toolStripSeparator5
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // pbAreaDesenho
             // 
@@ -250,6 +263,25 @@
             this.btnCor.Text = "Cor";
             this.btnCor.Click += new System.EventHandler(this.btnCor_Click);
             // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.Image = global::Grafico.Properties.Resources.selecionar;
+            this.btnSelecionar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(23, 22);
+            this.btnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSelecionar.ToolTipText = "Selecionar elemento";
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            // 
+            // btnDesselecionar
+            // 
+            this.btnDesselecionar.Image = global::Grafico.Properties.Resources.desselecionar;
+            this.btnDesselecionar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDesselecionar.Name = "btnDesselecionar";
+            this.btnDesselecionar.Size = new System.Drawing.Size(23, 22);
+            this.btnDesselecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDesselecionar.ToolTipText = "Desselecionar elemento";
+            // 
             // btnLimpar
             // 
             this.btnLimpar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -270,6 +302,15 @@
             this.btnSair.Size = new System.Drawing.Size(23, 22);
             this.btnSair.Text = "Sair";
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // txtPosicaoSelecionar
+            // 
+            this.txtPosicaoSelecionar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPosicaoSelecionar.Name = "txtPosicaoSelecionar";
+            this.txtPosicaoSelecionar.Size = new System.Drawing.Size(75, 25);
+            this.txtPosicaoSelecionar.ToolTipText = "Posição do elemento na lista de figuras (ordem em que a imagem escolhida foi dese" +
+    "nhada)";
+            this.txtPosicaoSelecionar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPosicaoSelecionar_KeyPress);
             // 
             // frmGrafico
             // 
@@ -319,6 +360,10 @@
         private System.Windows.Forms.ColorDialog dlgCor;
         private System.Windows.Forms.ToolStripButton btnLimpar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton btnSelecionar;
+        private System.Windows.Forms.ToolStripButton btnDesselecionar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripTextBox txtPosicaoSelecionar;
     }
 }
 

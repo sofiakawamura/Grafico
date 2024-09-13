@@ -24,6 +24,13 @@ namespace Grafico
                             pontoFinal.X, pontoFinal.Y);
         }
 
+        public override void DesenharSelecionadas(Graphics g)
+        {
+            Pen pen = new Pen(Color.Red, 2);
+            g.DrawLine(pen, base.X, base.Y,         // ponto inicial
+                            pontoFinal.X, pontoFinal.Y);
+        }
+
         public override string ToString()
         {
             return transformaString("l", 5) +

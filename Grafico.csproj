@@ -121,5 +121,14 @@
   <ItemGroup>
     <None Include="Icones\limpar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\selecionar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\desselecionar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\lista.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
