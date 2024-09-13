@@ -403,23 +403,18 @@ namespace Grafico
 
             else
             {
-                for (int indice = 0; indice < figuras.QuantosNos; indice++)
+                int indice = int.Parse(txtPosicaoSelecionar.Text);
+                
+                int contador = 0;
+                var atual = figuras.Primeiro;
+                while (contador != indice)
                 {
-                    if (indice == int.Parse(txtPosicaoSelecionar.Text))
-                    {
-                        int contador = 0;
-                        var atual = figuras.Primeiro;
-                        while (contador != indice)
-                        {
-                            atual = atual.Prox;
-                            contador++;
-                        }
-
-                        figurasSelecionadas.InserirAposFim(atual.Info);
-                    }
+                    atual = atual.Prox;
+                    contador++;
                 }
-            }
 
+                figurasSelecionadas.InserirAposFim(atual.Info);
+            }
             pbAreaDesenho.Invalidate();
         }
 
