@@ -1,37 +1,41 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\u23157\\Documents\\Grafico\\",
+  "WorkspaceRootPath": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|c:\\users\\u23157\\documents\\grafico\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Grafico\\retangulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|solutionrelative:retangulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Grafico\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Grafico\\elipse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|c:\\users\\u23157\\documents\\tecnico\\ed\\grafico\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|c:\\users\\u23157\\documents\\tecnico\\ed\\grafico\\listasimples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|solutionrelative:listasimples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\retangulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|solutionrelative:retangulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\elipse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|solutionrelative:elipse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Grafico\\reta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\reta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|solutionrelative:reta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Grafico\\ponto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\ponto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|solutionrelative:ponto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Grafico\\polilinha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\polilinha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|solutionrelative:polilinha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Grafico\\circulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\circulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97478A94-3060-4F4E-B4BD-0373CB2B4BFB}|Grafico.csproj|solutionrelative:circulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -42,67 +46,108 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 16,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Elipse.cs",
-              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Grafico\\Elipse.cs",
-              "RelativeDocumentMoniker": "Elipse.cs",
-              "ToolTip": "C:\\Users\\u23157\\Documents\\Grafico\\Elipse.cs",
-              "RelativeToolTip": "Elipse.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAywDAAAAA2AAAA",
+              "DocumentIndex": 2,
+              "Title": "ListaSimples.cs",
+              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\ListaSimples.cs",
+              "RelativeDocumentMoniker": "ListaSimples.cs",
+              "ToolTip": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\ListaSimples.cs",
+              "RelativeToolTip": "ListaSimples.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T18:08:21.017Z",
+              "WhenOpened": "2024-09-14T01:43:30.898Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Elipse.cs",
+              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Elipse.cs",
+              "RelativeDocumentMoniker": "Elipse.cs",
+              "ToolTip": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Elipse.cs",
+              "RelativeToolTip": "Elipse.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAywDAAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T18:08:21.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Reta.cs",
-              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Grafico\\Reta.cs",
+              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Reta.cs",
               "RelativeDocumentMoniker": "Reta.cs",
-              "ToolTip": "C:\\Users\\u23157\\Documents\\Grafico\\Reta.cs",
+              "ToolTip": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Reta.cs",
               "RelativeToolTip": "Reta.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T18:32:17.918Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Polilinha.cs",
-              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Grafico\\Polilinha.cs",
-              "RelativeDocumentMoniker": "Polilinha.cs",
-              "ToolTip": "C:\\Users\\u23157\\Documents\\Grafico\\Polilinha.cs",
-              "RelativeToolTip": "Polilinha.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T18:26:58.364Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Retangulo.cs",
-              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Grafico\\Retangulo.cs",
-              "RelativeDocumentMoniker": "Retangulo.cs",
-              "ToolTip": "C:\\Users\\u23157\\Documents\\Grafico\\Retangulo.cs",
-              "RelativeToolTip": "Retangulo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T18:26:11.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-11T18:32:17.918Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "Polilinha.cs",
+              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Polilinha.cs",
+              "RelativeDocumentMoniker": "Polilinha.cs",
+              "ToolTip": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Polilinha.cs",
+              "RelativeToolTip": "Polilinha.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T18:26:58.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Retangulo.cs",
+              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Retangulo.cs",
+              "RelativeDocumentMoniker": "Retangulo.cs",
+              "ToolTip": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Retangulo.cs",
+              "RelativeToolTip": "Retangulo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T18:26:11.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Circulo.cs",
-              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Grafico\\Circulo.cs",
+              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Circulo.cs",
               "RelativeDocumentMoniker": "Circulo.cs",
-              "ToolTip": "C:\\Users\\u23157\\Documents\\Grafico\\Circulo.cs",
+              "ToolTip": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Circulo.cs",
               "RelativeToolTip": "Circulo.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -110,37 +155,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Ponto.cs",
-              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Grafico\\Ponto.cs",
+              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Ponto.cs",
               "RelativeDocumentMoniker": "Ponto.cs",
-              "ToolTip": "C:\\Users\\u23157\\Documents\\Grafico\\Ponto.cs",
+              "ToolTip": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Ponto.cs",
               "RelativeToolTip": "Ponto.cs",
               "ViewState": "AQIAACgAAAAAAAAAAAAAwFEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T16:55:09.682Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-11T16:55:09.682Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Grafico\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\u23157\\Documents\\Grafico\\Form1.cs",
+              "ToolTip": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAADMBAAAAAAAAAAAUwDcBAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIABAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-11T16:54:42.972Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Grafico\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\u23157\\Documents\\Grafico\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\u23157\\Documents\\Tecnico\\ED\\Grafico\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-11T16:49:52.653Z",

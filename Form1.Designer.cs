@@ -29,10 +29,25 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnAbrir = new System.Windows.Forms.ToolStripButton();
+            this.btnSalvar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnPonto = new System.Windows.Forms.ToolStripButton();
+            this.btnReta = new System.Windows.Forms.ToolStripButton();
+            this.btnCirculo = new System.Windows.Forms.ToolStripButton();
+            this.btnElipse = new System.Windows.Forms.ToolStripButton();
+            this.btnRetangulo = new System.Windows.Forms.ToolStripButton();
+            this.btnPolilinha = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnCor = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtPosicaoSelecionar = new System.Windows.Forms.ToolStripTextBox();
+            this.btnSelecionar = new System.Windows.Forms.ToolStripButton();
+            this.btnDesselecionar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnLimpar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSair = new System.Windows.Forms.ToolStripButton();
             this.stMensagem = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -41,22 +56,7 @@
             this.dlgAbrir = new System.Windows.Forms.OpenFileDialog();
             this.dlgSalvar = new System.Windows.Forms.SaveFileDialog();
             this.dlgCor = new System.Windows.Forms.ColorDialog();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.pbAreaDesenho = new System.Windows.Forms.PictureBox();
-            this.btnAbrir = new System.Windows.Forms.ToolStripButton();
-            this.btnSalvar = new System.Windows.Forms.ToolStripButton();
-            this.btnPonto = new System.Windows.Forms.ToolStripButton();
-            this.btnReta = new System.Windows.Forms.ToolStripButton();
-            this.btnCirculo = new System.Windows.Forms.ToolStripButton();
-            this.btnElipse = new System.Windows.Forms.ToolStripButton();
-            this.btnRetangulo = new System.Windows.Forms.ToolStripButton();
-            this.btnPolilinha = new System.Windows.Forms.ToolStripButton();
-            this.btnCor = new System.Windows.Forms.ToolStripButton();
-            this.btnSelecionar = new System.Windows.Forms.ToolStripButton();
-            this.btnDesselecionar = new System.Windows.Forms.ToolStripButton();
-            this.btnLimpar = new System.Windows.Forms.ToolStripButton();
-            this.btnSair = new System.Windows.Forms.ToolStripButton();
-            this.txtPosicaoSelecionar = new System.Windows.Forms.ToolStripTextBox();
             this.toolStrip1.SuspendLayout();
             this.stMensagem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAreaDesenho)).BeginInit();
@@ -64,6 +64,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAbrir,
             this.btnSalvar,
@@ -86,40 +87,187 @@
             this.btnSair});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnAbrir
+            // 
+            this.btnAbrir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAbrir.Image = global::Grafico.Properties.Resources.abrir;
+            this.btnAbrir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(29, 24);
+            this.btnAbrir.Text = "toolStripButton1";
+            this.btnAbrir.ToolTipText = "Abrir Arquivo";
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSalvar.Image = global::Grafico.Properties.Resources.salvar;
+            this.btnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(29, 24);
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // btnPonto
+            // 
+            this.btnPonto.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPonto.Image = global::Grafico.Properties.Resources.ponto;
+            this.btnPonto.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPonto.Name = "btnPonto";
+            this.btnPonto.Size = new System.Drawing.Size(29, 24);
+            this.btnPonto.Text = "Ponto";
+            this.btnPonto.Click += new System.EventHandler(this.btnPonto_Click);
+            // 
+            // btnReta
+            // 
+            this.btnReta.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnReta.Image = global::Grafico.Properties.Resources.reta;
+            this.btnReta.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnReta.Name = "btnReta";
+            this.btnReta.Size = new System.Drawing.Size(29, 24);
+            this.btnReta.Text = "Linha";
+            this.btnReta.Click += new System.EventHandler(this.btnReta_Click);
+            // 
+            // btnCirculo
+            // 
+            this.btnCirculo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCirculo.Image = global::Grafico.Properties.Resources.circulo;
+            this.btnCirculo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCirculo.Name = "btnCirculo";
+            this.btnCirculo.Size = new System.Drawing.Size(29, 24);
+            this.btnCirculo.Text = "Círculo";
+            this.btnCirculo.Click += new System.EventHandler(this.btnCirculo_Click);
+            // 
+            // btnElipse
+            // 
+            this.btnElipse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnElipse.Image = global::Grafico.Properties.Resources.elipse;
+            this.btnElipse.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnElipse.Name = "btnElipse";
+            this.btnElipse.Size = new System.Drawing.Size(29, 24);
+            this.btnElipse.Text = "Elipse";
+            this.btnElipse.Click += new System.EventHandler(this.btnElipse_Click);
+            // 
+            // btnRetangulo
+            // 
+            this.btnRetangulo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnRetangulo.Image = global::Grafico.Properties.Resources.retangulo;
+            this.btnRetangulo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRetangulo.Name = "btnRetangulo";
+            this.btnRetangulo.Size = new System.Drawing.Size(29, 24);
+            this.btnRetangulo.Text = "Retângulo";
+            this.btnRetangulo.Click += new System.EventHandler(this.btnRetangulo_Click);
+            // 
+            // btnPolilinha
+            // 
+            this.btnPolilinha.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPolilinha.Image = global::Grafico.Properties.Resources.polilinha;
+            this.btnPolilinha.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPolilinha.Name = "btnPolilinha";
+            this.btnPolilinha.Size = new System.Drawing.Size(29, 24);
+            this.btnPolilinha.Text = "Polilinha";
+            this.btnPolilinha.Click += new System.EventHandler(this.btnPolilinha_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // btnCor
+            // 
+            this.btnCor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCor.Image = global::Grafico.Properties.Resources.cores;
+            this.btnCor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCor.Name = "btnCor";
+            this.btnCor.Size = new System.Drawing.Size(29, 24);
+            this.btnCor.Text = "Cor";
+            this.btnCor.Click += new System.EventHandler(this.btnCor_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            // 
+            // txtPosicaoSelecionar
+            // 
+            this.txtPosicaoSelecionar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPosicaoSelecionar.Name = "txtPosicaoSelecionar";
+            this.txtPosicaoSelecionar.Size = new System.Drawing.Size(75, 27);
+            this.txtPosicaoSelecionar.ToolTipText = "Posição do elemento na lista de figuras (ordem em que a imagem escolhida foi dese" +
+    "nhada)";
+            this.txtPosicaoSelecionar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPosicaoSelecionar_KeyPress);
+            // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.Image = global::Grafico.Properties.Resources.selecionar;
+            this.btnSelecionar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(29, 24);
+            this.btnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSelecionar.ToolTipText = "Selecionar elemento";
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            // 
+            // btnDesselecionar
+            // 
+            this.btnDesselecionar.Image = global::Grafico.Properties.Resources.desselecionar;
+            this.btnDesselecionar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDesselecionar.Name = "btnDesselecionar";
+            this.btnDesselecionar.Size = new System.Drawing.Size(29, 24);
+            this.btnDesselecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDesselecionar.ToolTipText = "Desselecionar elemento";
+            this.btnDesselecionar.Click += new System.EventHandler(this.btnDesselecionar_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnLimpar.Image = global::Grafico.Properties.Resources.limpar;
+            this.btnLimpar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(29, 24);
+            this.btnLimpar.Text = "toolStripButton1";
+            this.btnLimpar.ToolTipText = "Limpar";
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            // 
+            // btnSair
+            // 
+            this.btnSair.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSair.Image = global::Grafico.Properties.Resources.sair;
+            this.btnSair.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(29, 24);
+            this.btnSair.Text = "Sair";
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // stMensagem
             // 
+            this.stMensagem.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.stMensagem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4});
-            this.stMensagem.Location = new System.Drawing.Point(0, 428);
+            this.stMensagem.Location = new System.Drawing.Point(0, 424);
             this.stMensagem.Name = "stMensagem";
-            this.stMensagem.Size = new System.Drawing.Size(800, 22);
+            this.stMensagem.Size = new System.Drawing.Size(800, 26);
             this.stMensagem.TabIndex = 1;
             this.stMensagem.Text = "statusStrip1";
             // 
@@ -127,36 +275,31 @@
             // 
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(71, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(90, 20);
             this.toolStripStatusLabel1.Text = "Mensagem:";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(91, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(113, 20);
             this.toolStripStatusLabel2.Text = "sem mensagem";
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(81, 17);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(104, 20);
             this.toolStripStatusLabel3.Text = "Coordenadas:";
             // 
             // toolStripStatusLabel4
             // 
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(25, 17);
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(30, 20);
             this.toolStripStatusLabel4.Text = "x, y";
             // 
             // dlgAbrir
             // 
             this.dlgAbrir.FileName = "openFileDialog1";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // pbAreaDesenho
             // 
@@ -171,146 +314,6 @@
             this.pbAreaDesenho.Paint += new System.Windows.Forms.PaintEventHandler(this.pbAreaDesenho_Paint);
             this.pbAreaDesenho.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbAreaDesenho_MouseClick);
             this.pbAreaDesenho.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbAreaDesenho_MouseMove);
-            // 
-            // btnAbrir
-            // 
-            this.btnAbrir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAbrir.Image = global::Grafico.Properties.Resources.abrir;
-            this.btnAbrir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(23, 22);
-            this.btnAbrir.Text = "toolStripButton1";
-            this.btnAbrir.ToolTipText = "Abrir Arquivo";
-            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSalvar.Image = global::Grafico.Properties.Resources.salvar;
-            this.btnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(23, 22);
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnPonto
-            // 
-            this.btnPonto.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPonto.Image = global::Grafico.Properties.Resources.ponto;
-            this.btnPonto.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPonto.Name = "btnPonto";
-            this.btnPonto.Size = new System.Drawing.Size(23, 22);
-            this.btnPonto.Text = "Ponto";
-            this.btnPonto.Click += new System.EventHandler(this.btnPonto_Click);
-            // 
-            // btnReta
-            // 
-            this.btnReta.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnReta.Image = global::Grafico.Properties.Resources.reta;
-            this.btnReta.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnReta.Name = "btnReta";
-            this.btnReta.Size = new System.Drawing.Size(23, 22);
-            this.btnReta.Text = "Linha";
-            this.btnReta.Click += new System.EventHandler(this.btnReta_Click);
-            // 
-            // btnCirculo
-            // 
-            this.btnCirculo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCirculo.Image = global::Grafico.Properties.Resources.circulo;
-            this.btnCirculo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCirculo.Name = "btnCirculo";
-            this.btnCirculo.Size = new System.Drawing.Size(23, 22);
-            this.btnCirculo.Text = "Círculo";
-            this.btnCirculo.Click += new System.EventHandler(this.btnCirculo_Click);
-            // 
-            // btnElipse
-            // 
-            this.btnElipse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnElipse.Image = global::Grafico.Properties.Resources.elipse;
-            this.btnElipse.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnElipse.Name = "btnElipse";
-            this.btnElipse.Size = new System.Drawing.Size(23, 22);
-            this.btnElipse.Text = "Elipse";
-            this.btnElipse.Click += new System.EventHandler(this.btnElipse_Click);
-            // 
-            // btnRetangulo
-            // 
-            this.btnRetangulo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnRetangulo.Image = global::Grafico.Properties.Resources.retangulo;
-            this.btnRetangulo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnRetangulo.Name = "btnRetangulo";
-            this.btnRetangulo.Size = new System.Drawing.Size(23, 22);
-            this.btnRetangulo.Text = "Retângulo";
-            this.btnRetangulo.Click += new System.EventHandler(this.btnRetangulo_Click);
-            // 
-            // btnPolilinha
-            // 
-            this.btnPolilinha.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPolilinha.Image = global::Grafico.Properties.Resources.polilinha;
-            this.btnPolilinha.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPolilinha.Name = "btnPolilinha";
-            this.btnPolilinha.Size = new System.Drawing.Size(23, 22);
-            this.btnPolilinha.Text = "Polilinha";
-            this.btnPolilinha.Click += new System.EventHandler(this.btnPolilinha_Click);
-            // 
-            // btnCor
-            // 
-            this.btnCor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCor.Image = global::Grafico.Properties.Resources.cores;
-            this.btnCor.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCor.Name = "btnCor";
-            this.btnCor.Size = new System.Drawing.Size(23, 22);
-            this.btnCor.Text = "Cor";
-            this.btnCor.Click += new System.EventHandler(this.btnCor_Click);
-            // 
-            // btnSelecionar
-            // 
-            this.btnSelecionar.Image = global::Grafico.Properties.Resources.selecionar;
-            this.btnSelecionar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSelecionar.Name = "btnSelecionar";
-            this.btnSelecionar.Size = new System.Drawing.Size(23, 22);
-            this.btnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnSelecionar.ToolTipText = "Selecionar elemento";
-            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
-            // 
-            // btnDesselecionar
-            // 
-            this.btnDesselecionar.Image = global::Grafico.Properties.Resources.desselecionar;
-            this.btnDesselecionar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDesselecionar.Name = "btnDesselecionar";
-            this.btnDesselecionar.Size = new System.Drawing.Size(23, 22);
-            this.btnDesselecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnDesselecionar.ToolTipText = "Desselecionar elemento";
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLimpar.Image = global::Grafico.Properties.Resources.limpar;
-            this.btnLimpar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(23, 22);
-            this.btnLimpar.Text = "toolStripButton1";
-            this.btnLimpar.ToolTipText = "Limpar";
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // btnSair
-            // 
-            this.btnSair.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSair.Image = global::Grafico.Properties.Resources.sair;
-            this.btnSair.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(23, 22);
-            this.btnSair.Text = "Sair";
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // txtPosicaoSelecionar
-            // 
-            this.txtPosicaoSelecionar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPosicaoSelecionar.Name = "txtPosicaoSelecionar";
-            this.txtPosicaoSelecionar.Size = new System.Drawing.Size(75, 25);
-            this.txtPosicaoSelecionar.ToolTipText = "Posição do elemento na lista de figuras (ordem em que a imagem escolhida foi dese" +
-    "nhada)";
-            this.txtPosicaoSelecionar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPosicaoSelecionar_KeyPress);
             // 
             // frmGrafico
             // 

@@ -82,4 +82,62 @@ public class ListaSimples<Dado> where Dado : IComparable<Dado>
             atual = atual.Prox;
         }
     }
+
+    public bool Existe(Dado outroProcurado)
+    {
+        anterior = null;
+        atual = primeiro;
+
+        if (EstaVazia)
+            return false;
+
+        if (outroProcurado.CompareTo(primeiro.Info) < 0)
+            return false;
+
+        if (outroProcurado.CompareTo(ultimo.Info) > 0)
+        {
+            anterior = ultimo;
+            atual = null;
+            return false;
+        }
+
+        bool achou = false;
+        bool fim = false;
+
+        while (!achou && !fim)
+            if (atual == null)
+                fim = true;
+            else if (outroProcurado.CompareTo(atual.Info) == 0)
+                achou = true;
+            else if (atual.Info.CompareTo(outroProcurado) > 0)
+                fim = true;
+            else
+            {
+                anterior = atual;
+                atual = atual.Prox;
+            }
+
+        return achou;   
+    }
+
+    public void Excluir(Dado dado)
+    {
+        if (Existe(dado))
+        {
+            atual = primeiro;
+            anterior = null;
+            while (atual.Info.CompareTo(dado) != 0)
+            {
+                anterior = atual;
+                atual = atual.Prox;
+            }
+
+            if (dado.CompareTo(primeiro.Info) == 0)
+                primeiro = atual.Prox;
+            else
+                anterior.Prox = atual.Prox;
+
+            quantosNos--;
+        }
+    }
 }

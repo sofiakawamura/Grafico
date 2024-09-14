@@ -40,6 +40,7 @@ namespace Grafico
 
         private void LimparEsperas()
         {
+            stMensagem.Items[1].Text = "sem mensagem";
             esperaPonto = false;
             esperaInicioReta = false;
             esperaFimReta = false;
@@ -216,7 +217,7 @@ namespace Grafico
                 p1.Y = e.Y;
                 esperaInicioReta = false;
                 esperaFimReta = true;
-                stMensagem.Items[1].Text = "clique o ponto final da reta";
+                stMensagem.Items[1].Text = "clique no ponto final da reta";
             }
             else if (esperaFimReta)
             {
@@ -281,7 +282,7 @@ namespace Grafico
                 p1.Y = e.Y;
                 esperaInicioRetangulo = false;
                 esperaFimRetangulo = true;
-                stMensagem.Items[1].Text = "clique no canto inferior direito do retângulo";
+                stMensagem.Items[1].Text = "clique na diagonal do retângulo";
             }
             else if (esperaFimRetangulo)
             {
@@ -332,36 +333,36 @@ namespace Grafico
 
         private void btnReta_Click(object sender, EventArgs e)
         {
-            stMensagem.Items[1].Text = "clique no local do ponto inicial da reta";
             LimparEsperas();
+            stMensagem.Items[1].Text = "clique no ponto inicial da reta";
             esperaInicioReta = true;
         }
 
         private void btnCirculo_Click(object sender, EventArgs e)
         {
-            stMensagem.Items[1].Text = "clique no local do ponto central do círculo";
             LimparEsperas();
+            stMensagem.Items[1].Text = "clique no ponto central do círculo";
             esperaCentroCirculo = true;
         }
 
         private void btnElipse_Click(object sender, EventArgs e)
         {
-            stMensagem.Items[1].Text = "clique no local do ponto central da elipse";
             LimparEsperas();
+            stMensagem.Items[1].Text = "clique no ponto central da elipse";
             esperaCentroElipse = true;
         }
 
         private void btnRetangulo_Click(object sender, EventArgs e)
         {
-            stMensagem.Items[1].Text = "clique no canto superior esquerdo do retângulo";
             LimparEsperas();
+            stMensagem.Items[1].Text = "clique no ponto inicial do retângulo";
             esperaInicioRetangulo = true;
         }
 
         private void btnPolilinha_Click(object sender, EventArgs e)
         {
-            stMensagem.Items[1].Text = "clique no ponto inicial da polilinha";
             LimparEsperas();
+            stMensagem.Items[1].Text = "clique no ponto inicial da polilinha";
             esperaInicioPolilinha = true;
         }
 
@@ -370,6 +371,23 @@ namespace Grafico
             if (dlgCor.ShowDialog() == DialogResult.OK)
             {
                 corAtual = dlgCor.Color;
+
+                var figuraSelecionada = figurasSelecionadas.Primeiro;
+                while (figuraSelecionada != null)
+                {
+                    var atual = figuras.Primeiro;
+                    while (atual != null)
+                    {
+                        if (atual.Info.CompareTo(figuraSelecionada.Info) == 0)
+                        {
+                            atual.Info.Cor = corAtual;
+                            break;
+                        }
+                        atual = atual.Prox;
+                    }
+                    figuraSelecionada = figuraSelecionada.Prox;
+                }
+                LimparFigurasSelecionadas();
             }
         }
 
@@ -377,11 +395,11 @@ namespace Grafico
         {
             LimparFiguras();
             LimparFigurasSelecionadas();
-            pbAreaDesenho.Invalidate();
         }
 
         private void txtPosicaoSelecionar_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // verifica se o caracter digitado é um número
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
@@ -391,9 +409,10 @@ namespace Grafico
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
+            int indice = int.Parse(txtPosicaoSelecionar.Text);
+
             // para verificar se a posição (da lista) digitada pelo usuário existe
-            bool indiceExiste =    int.Parse(txtPosicaoSelecionar.Text) < figuras.QuantosNos 
-                                && int.Parse(txtPosicaoSelecionar.Text) >= 0;
+            bool indiceExiste = indice < figuras.QuantosNos && indice >= 0;
 
             if (!indiceExiste)
             {
@@ -403,8 +422,6 @@ namespace Grafico
 
             else
             {
-                int indice = int.Parse(txtPosicaoSelecionar.Text);
-                
                 int contador = 0;
                 var atual = figuras.Primeiro;
                 while (contador != indice)
@@ -412,8 +429,36 @@ namespace Grafico
                     atual = atual.Prox;
                     contador++;
                 }
+                if (!figurasSelecionadas.Existe(atual.Info))
+                    figurasSelecionadas.InserirAposFim(atual.Info);
+            }
+            pbAreaDesenho.Invalidate();
+        }
 
-                figurasSelecionadas.InserirAposFim(atual.Info);
+        private void btnDesselecionar_Click(object sender, EventArgs e)
+        {
+            int indice = int.Parse(txtPosicaoSelecionar.Text);
+
+            // para verificar se a posição (da lista) digitada pelo usuário existe
+            bool indiceExiste = indice < figuras.QuantosNos && indice >= 0;
+
+            if (!indiceExiste)
+            {
+                MessageBox.Show("Digite uma posição válida!");
+                txtPosicaoSelecionar.Text = string.Empty;
+            }
+
+            else
+            {
+                int contador = 0;
+                var figuraDesejada = figuras.Primeiro;
+                while (contador != indice)
+                {
+                    figuraDesejada = figuraDesejada.Prox;
+                    contador++;
+                }
+
+                figurasSelecionadas.Excluir(figuraDesejada.Info);
             }
             pbAreaDesenho.Invalidate();
         }
@@ -422,5 +467,6 @@ namespace Grafico
         {
             Close();
         }
+
     }
 }
