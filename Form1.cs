@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Ana Clara Martin da Silveira - 23122
+// Sofia Tasselli Kawamura - 23157
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -115,6 +118,12 @@ namespace Grafico
                         int corR = Convert.ToInt32(linha.Substring(15, 5).Trim());
                         int corG = Convert.ToInt32(linha.Substring(20, 5).Trim());
                         int corB = Convert.ToInt32(linha.Substring(25, 5).Trim());
+
+                        this.Left = (int)xInfEsq;
+                        this.Top = (int)yInfEsq;
+                        this.Width = (int)Math.Round(xSupDir - xInfEsq);
+                        this.Height = (int)Math.Round(ySupDir - yInfEsq);
+
                         Color cor = new Color();
                         cor = Color.FromArgb(255, corR, corG, corB);
                         switch (tipo[0])
@@ -172,10 +181,10 @@ namespace Grafico
             {
                 StreamWriter arquivo = new StreamWriter(dlgSalvar.FileName);
 
-                int xInfEsq = pbAreaDesenho.Left;
-                int yInfEsq = pbAreaDesenho.Bottom;
-                int xSupDir = pbAreaDesenho.Right;
-                int ySupDir = pbAreaDesenho.Top;
+                double xInfEsq = this.Left;
+                double yInfEsq = this.Top;
+                double xSupDir = this.Left + this.Width;
+                double ySupDir = this.Top + this.Height;
 
                 string linha =  xInfEsq.ToString().PadLeft(10, '0') + 
                                 yInfEsq.ToString().PadLeft(5, '0') +
@@ -326,8 +335,8 @@ namespace Grafico
 
         private void btnPonto_Click(object sender, EventArgs e)
         {
-            stMensagem.Items[1].Text = "clique no local do ponto desejado";
             LimparEsperas();
+            stMensagem.Items[1].Text = "clique no local do ponto desejado";
             esperaPonto = true;
         }
 

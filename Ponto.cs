@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Ana Clara Martin da Silveira - 23122
+// Sofia Tasselli Kawamura - 23157
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,13 +54,13 @@ namespace Grafico
         public virtual void Desenhar(Color cor, Graphics g)
         {
             Pen pen = new Pen(cor);
-            g.DrawLine(pen, x, y, x, y);
+            g.DrawEllipse(pen, x, y, 2, 2);
         }
 
         public virtual void DesenharSelecionadas(Graphics g)
         {
             Pen pen = new Pen(Color.Red, 2);
-            g.DrawLine(pen, x, y, x, y);
+            g.DrawEllipse(pen, x, y, 2, 2);
         }
 
         public int CompareTo(Ponto other)
