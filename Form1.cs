@@ -29,9 +29,8 @@ namespace Grafico
         bool esperaFimReta = false;
         bool esperaCentroCirculo = false;
         bool esperaRaioCirculo = false;
-        bool esperaCentroElipse = false;
-        bool esperaRaio1Elipse = false;
-        bool esperaRaio2Elipse = false;
+        bool esperaInicioElipse = false;
+        bool esperaDiagonalElipse = false;
         bool esperaInicioRetangulo = false;
         bool esperaFimRetangulo = false;
         bool esperaInicioPolilinha = false;
@@ -49,9 +48,8 @@ namespace Grafico
             esperaFimReta = false;
             esperaCentroCirculo = false;
             esperaRaioCirculo = false;
-            esperaCentroElipse = false;
-            esperaRaio1Elipse = false; 
-            esperaRaio2Elipse = false;
+            esperaInicioElipse = false;
+            esperaDiagonalElipse = false; 
             esperaInicioRetangulo = false;
             esperaFimRetangulo = false;
             esperaInicioPolilinha = false;
@@ -256,30 +254,31 @@ namespace Grafico
                 novoCirculo.Desenhar(novoCirculo.Cor, pbAreaDesenho.CreateGraphics());
                 stMensagem.Items[1].Text = "sem mensagem";
             }
-            else if (esperaCentroElipse)
+            else if (esperaInicioElipse)
             {
                 p1.Cor = corAtual;
                 p1.X = e.X;
                 p1.Y = e.Y;
-                esperaCentroElipse = false;
-                esperaRaio1Elipse = true;
-                stMensagem.Items[1].Text = "clique no primeiro raio da elipse";
+                esperaInicioElipse = false;
+                esperaDiagonalElipse = true;
+                stMensagem.Items[1].Text = "clique na diagonal da elipse";
             }
-            else if (esperaRaio1Elipse)
+            else if (esperaDiagonalElipse)
             {
-                raio1 = (int)Math.Round(Math.Sqrt(Math.Pow(e.X - p1.X, 2) + Math.Pow(e.Y - p1.Y, 2)));
-                esperaCentroElipse = false;
-                esperaRaio1Elipse = false;
-                esperaRaio2Elipse = true;
-                stMensagem.Items[1].Text = "clique no segundo raio da elipse";
-            }
-            else if (esperaRaio2Elipse)
-            {
-                esperaCentroElipse = false;
-                esperaRaio1Elipse = false;
-                esperaRaio2Elipse = false;
-                int raio2 = (int)Math.Round(Math.Sqrt(Math.Pow(e.X - p1.X, 2) + Math.Pow(e.Y - p1.Y, 2)));
-                Elipse novaElipse = new Elipse(p1.X, p1.Y, raio1, raio2, corAtual);
+                esperaInicioElipse = false;
+                esperaDiagonalElipse = false;
+
+                int raio1 = (e.X - p1.X) / 2; // metade do diâmetro
+                int raio2 = (e.Y - p1.Y) / 2;
+                if (e.X < p1.X)
+                    raio1 *= (-1);
+                if (e.Y < p1.Y)
+                    raio2 *= (-1);
+
+                int centroX = (e.X + p1.X) / 2; // ponto médio entre as diagonais 
+                int centroY = (e.Y + p1.Y) / 2;
+
+                Elipse novaElipse = new Elipse(centroX, centroY, raio1, raio2, corAtual);
                 figuras.InserirAposFim(novaElipse);
                 novaElipse.Desenhar(novaElipse.Cor, pbAreaDesenho.CreateGraphics());
                 stMensagem.Items[1].Text = "sem mensagem";
@@ -357,8 +356,8 @@ namespace Grafico
         private void btnElipse_Click(object sender, EventArgs e)
         {
             LimparEsperas();
-            stMensagem.Items[1].Text = "clique no ponto central da elipse";
-            esperaCentroElipse = true;
+            stMensagem.Items[1].Text = "clique no ponto inicial da elipse";
+            esperaInicioElipse = true;
         }
 
         private void btnRetangulo_Click(object sender, EventArgs e)
