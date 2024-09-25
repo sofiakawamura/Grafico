@@ -73,6 +73,16 @@ namespace Grafico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap apagar {
+            get {
+                object obj = ResourceManager.GetObject("apagar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap circulo {
             get {
                 object obj = ResourceManager.GetObject("circulo", resourceCulture);

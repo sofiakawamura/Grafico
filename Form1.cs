@@ -414,15 +414,15 @@ namespace Grafico
             }
         }
 
-
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            int indice = int.Parse(txtPosicaoSelecionar.Text);
+            LimparEsperas();
+            bool conversao = int.TryParse(txtPosicaoSelecionar.Text, out int indice);
 
             // para verificar se a posição (da lista) digitada pelo usuário existe
             bool indiceExiste = indice < figuras.QuantosNos && indice >= 0;
 
-            if (!indiceExiste)
+            if (!indiceExiste || !conversao)
             {
                 MessageBox.Show("Digite uma posição válida!");
                 txtPosicaoSelecionar.Text = string.Empty;
@@ -445,12 +445,13 @@ namespace Grafico
 
         private void btnDesselecionar_Click(object sender, EventArgs e)
         {
-            int indice = int.Parse(txtPosicaoSelecionar.Text);
+            LimparEsperas();
+            bool conversao = int.TryParse(txtPosicaoSelecionar.Text, out int indice);
 
             // para verificar se a posição (da lista) digitada pelo usuário existe
             bool indiceExiste = indice < figuras.QuantosNos && indice >= 0;
 
-            if (!indiceExiste)
+            if (!indiceExiste || !conversao)
             {
                 MessageBox.Show("Digite uma posição válida!");
                 txtPosicaoSelecionar.Text = string.Empty;
@@ -467,6 +468,19 @@ namespace Grafico
                 }
 
                 figurasSelecionadas.Excluir(figuraDesejada.Info);
+            }
+            pbAreaDesenho.Invalidate();
+        }
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            LimparEsperas();
+            var atual = figurasSelecionadas.Primeiro;
+            while (atual != null)
+            {
+                figuras.Excluir(atual.Info);
+                figurasSelecionadas.Excluir(atual.Info);
+                atual = atual.Prox;
             }
             pbAreaDesenho.Invalidate();
         }
