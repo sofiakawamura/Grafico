@@ -12,7 +12,7 @@ namespace Grafico
 {
     class Polilinha : Ponto
     {
-        ListaSimples<Ponto> pontos;
+        ListaSimples<Ponto> pontos; // lista de outros pontos
 
         public Polilinha(int x1, int y1, Color novaCor) : base(x1, y1, novaCor)
         {
@@ -34,6 +34,7 @@ namespace Grafico
 
             Ponto inicial = new Ponto(base.X, base.Y, Cor);
 
+            // percorre a lista de pontos e desenha uma reta para cada ponto da lista
             var atual = pontos.Primeiro;
             while (atual != null)
             {

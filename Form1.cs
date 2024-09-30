@@ -38,7 +38,6 @@ namespace Grafico
 
         Color corAtual = Color.Black;
         private static Ponto p1 = new Ponto(0, 0, Color.Black);
-        int raio1;
 
         private void LimparEsperas()
         {
@@ -73,8 +72,9 @@ namespace Grafico
         private void pbAreaDesenho_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics; // acessa contexto gráfico
-            var atual = figuras.Primeiro;
 
+            // desenha todas as figuras
+            var atual = figuras.Primeiro;
             while (atual != null)
             {
                 Ponto figuraAtual = atual.Info ;
@@ -82,8 +82,8 @@ namespace Grafico
                 atual = atual.Prox;
             }
 
+            // desenha as figuras selecionadas em destaque
             var atualSelecionadas = figurasSelecionadas.Primeiro;
-
             while (atualSelecionadas != null)
             {
                 Ponto figuraSelecionadaAtual = atualSelecionadas.Info ;
@@ -117,6 +117,7 @@ namespace Grafico
                         int corG = Convert.ToInt32(linha.Substring(20, 5).Trim());
                         int corB = Convert.ToInt32(linha.Substring(25, 5).Trim());
 
+                        // muda o tamanho do formulário para se ajustar ao que está salvo no arquivo
                         this.Left = (int)xInfEsq;
                         this.Top = (int)yInfEsq;
                         this.Width = (int)Math.Round(xSupDir - xInfEsq);
@@ -179,6 +180,7 @@ namespace Grafico
             {
                 StreamWriter arquivo = new StreamWriter(dlgSalvar.FileName);
 
+                // pega o tamanho atual do formulário
                 double xInfEsq = this.Left;
                 double yInfEsq = this.Top;
                 double xSupDir = this.Left + this.Width;
@@ -190,6 +192,7 @@ namespace Grafico
                                 ySupDir.ToString().PadLeft(5, '0');
                 arquivo.WriteLine(linha);
 
+                // percorre as figuras da lista e escreve cada uma no arquivo
                 var atual = figuras.Primeiro;
                 while (atual != null)
                 {
@@ -211,10 +214,12 @@ namespace Grafico
         {
             if (esperaPonto)
             {
+                esperaPonto = false;
+
                 Ponto novoPonto = new Ponto(e.X, e.Y, corAtual);
                 figuras.InserirAposFim(novoPonto);
+
                 novoPonto.Desenhar(novoPonto.Cor, pbAreaDesenho.CreateGraphics());
-                esperaPonto = false;
                 stMensagem.Items[1].Text = "sem mensagem";
             }
             else if (esperaInicioReta)
@@ -222,16 +227,20 @@ namespace Grafico
                 p1.Cor = corAtual;
                 p1.X = e.X;
                 p1.Y = e.Y;
+
                 esperaInicioReta = false;
                 esperaFimReta = true;
+
                 stMensagem.Items[1].Text = "clique no ponto final da reta";
             }
             else if (esperaFimReta)
             {
                 esperaInicioReta = false;
                 esperaFimReta = false;
+
                 Reta novaLinha = new Reta(p1.X, p1.Y, e.X, e.Y, corAtual);
                 figuras.InserirAposFim(novaLinha);
+
                 novaLinha.Desenhar(novaLinha.Cor, pbAreaDesenho.CreateGraphics());
                 stMensagem.Items[1].Text = "sem mensagem";
             }
@@ -240,17 +249,21 @@ namespace Grafico
                 p1.Cor = corAtual;
                 p1.X = e.X;
                 p1.Y = e.Y;
+
                 esperaCentroCirculo = false;
                 esperaRaioCirculo = true;
+
                 stMensagem.Items[1].Text = "clique no raio do círculo";
             }
             else if (esperaRaioCirculo)
             {
                 esperaCentroCirculo = false;
                 esperaRaioCirculo = false;
+
                 int raio = (int)Math.Round(Math.Sqrt(Math.Pow(e.X - p1.X, 2) + Math.Pow(e.Y - p1.Y, 2)));
                 Circulo novoCirculo = new Circulo(p1.X, p1.Y, raio, corAtual);
                 figuras.InserirAposFim(novoCirculo);
+
                 novoCirculo.Desenhar(novoCirculo.Cor, pbAreaDesenho.CreateGraphics());
                 stMensagem.Items[1].Text = "sem mensagem";
             }
@@ -259,8 +272,10 @@ namespace Grafico
                 p1.Cor = corAtual;
                 p1.X = e.X;
                 p1.Y = e.Y;
+
                 esperaInicioElipse = false;
                 esperaDiagonalElipse = true;
+
                 stMensagem.Items[1].Text = "clique na diagonal da elipse";
             }
             else if (esperaDiagonalElipse)
@@ -268,18 +283,19 @@ namespace Grafico
                 esperaInicioElipse = false;
                 esperaDiagonalElipse = false;
 
-                int raio1 = (e.X - p1.X) / 2; // metade do diâmetro
-                int raio2 = (e.Y - p1.Y) / 2;
-                if (e.X < p1.X)
+                int raio1 = (e.X - p1.X) / 2; // metade da largura do retângulo
+                int raio2 = (e.Y - p1.Y) / 2; // metade da altura do retângulo
+                if (e.X < p1.X)               // pega o valor em módulo
                     raio1 *= (-1);
                 if (e.Y < p1.Y)
                     raio2 *= (-1);
 
-                int centroX = (e.X + p1.X) / 2; // ponto médio entre as diagonais 
-                int centroY = (e.Y + p1.Y) / 2;
+                int centroX = (e.X + p1.X) / 2; // ponto médio (horizontal) do retângulo 
+                int centroY = (e.Y + p1.Y) / 2; // ponto médio (vertical) do retângulo
 
                 Elipse novaElipse = new Elipse(centroX, centroY, raio1, raio2, corAtual);
                 figuras.InserirAposFim(novaElipse);
+
                 novaElipse.Desenhar(novaElipse.Cor, pbAreaDesenho.CreateGraphics());
                 stMensagem.Items[1].Text = "sem mensagem";
             }
@@ -288,8 +304,10 @@ namespace Grafico
                 p1.Cor = corAtual;
                 p1.X = e.X;
                 p1.Y = e.Y;
+
                 esperaInicioRetangulo = false;
                 esperaFimRetangulo = true;
+
                 stMensagem.Items[1].Text = "clique na diagonal do retângulo";
             }
             else if (esperaFimRetangulo)
@@ -302,17 +320,18 @@ namespace Grafico
 
                 if (e.Y < p1.Y)
                 {
-                    altura *= (-1);
-                    p1.Y = e.Y;
+                    altura *= (-1);  // valor em módulo da altura
+                    p1.Y = e.Y;      // muda o ponto inicial para o que está mais para cima
                 }
                 if (e.X < p1.X)
                 {
-                    largura *= (-1);
-                    p1.X = e.X;
+                    largura *= (-1); // valor em módulo da largura
+                    p1.X = e.X;      // muda o ponto inicial para o que está mais à esquerda
                 }
 
                 Retangulo novoRetangulo = new Retangulo(p1.X, p1.Y, largura, altura, corAtual);
                 figuras.InserirAposFim(novoRetangulo);
+
                 novoRetangulo.Desenhar(novoRetangulo.Cor, pbAreaDesenho.CreateGraphics());
                 stMensagem.Items[1].Text = "sem mensagem";
             }
@@ -320,14 +339,17 @@ namespace Grafico
             {
                 Polilinha novaPolilinha = new Polilinha(e.X, e.Y, corAtual);
                 figuras.InserirAposFim(novaPolilinha);
+
                 esperaInicioPolilinha = false;
                 esperaPolilinha = true;
+
                 stMensagem.Items[1].Text = "clique no próximo ponto da linha";
             }
             else if (esperaPolilinha)
             {
-                Polilinha polilinha = (Polilinha)figuras.Ultimo.Info;
-                polilinha.Pontos.InserirAposFim(new Ponto(e.X, e.Y, corAtual));
+                Polilinha polilinha = (Polilinha)figuras.Ultimo.Info;  // último elemento da lista será o objeto polilinha
+                polilinha.Pontos.InserirAposFim(new Ponto(e.X, e.Y, corAtual));    // insere um novo ponto na lista de pontos da polilinha
+
                 polilinha.Desenhar(polilinha.Cor, pbAreaDesenho.CreateGraphics());
             }
         }
@@ -380,12 +402,15 @@ namespace Grafico
             {
                 corAtual = dlgCor.Color;
 
+                // percorre as figuras selecionadas
                 var figuraSelecionada = figurasSelecionadas.Primeiro;
                 while (figuraSelecionada != null)
                 {
+                    // percorre as figuras
                     var atual = figuras.Primeiro;
                     while (atual != null)
                     {
+                        // se a figura atual está selecionada, pinta ela da cor nova
                         if (atual.Info.CompareTo(figuraSelecionada.Info) == 0)
                         {
                             atual.Info.Cor = corAtual;
@@ -395,6 +420,8 @@ namespace Grafico
                     }
                     figuraSelecionada = figuraSelecionada.Prox;
                 }
+
+                // desseleciona todas as figuras
                 LimparFigurasSelecionadas();
             }
         }
@@ -417,6 +444,7 @@ namespace Grafico
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
             LimparEsperas();
+
             bool conversao = int.TryParse(txtPosicaoSelecionar.Text, out int indice);
 
             // para verificar se a posição (da lista) digitada pelo usuário existe
@@ -430,6 +458,7 @@ namespace Grafico
 
             else
             {
+                // percorre a lista de figuras n (posição desejada) vezes
                 int contador = 0;
                 var atual = figuras.Primeiro;
                 while (contador != indice)
@@ -437,6 +466,8 @@ namespace Grafico
                     atual = atual.Prox;
                     contador++;
                 }
+
+                // adiciona a figura atual à lista de selecionadas
                 if (!figurasSelecionadas.Existe(atual.Info))
                     figurasSelecionadas.InserirAposFim(atual.Info);
             }
@@ -446,6 +477,7 @@ namespace Grafico
         private void btnDesselecionar_Click(object sender, EventArgs e)
         {
             LimparEsperas();
+
             bool conversao = int.TryParse(txtPosicaoSelecionar.Text, out int indice);
 
             // para verificar se a posição (da lista) digitada pelo usuário existe
@@ -459,6 +491,7 @@ namespace Grafico
 
             else
             {
+                // percorre a lista de figuras n (posição desejada) vezes
                 int contador = 0;
                 var figuraDesejada = figuras.Primeiro;
                 while (contador != indice)
@@ -467,6 +500,7 @@ namespace Grafico
                     contador++;
                 }
 
+                // remove a figura atual da lista de selecionadas
                 figurasSelecionadas.Excluir(figuraDesejada.Info);
             }
             pbAreaDesenho.Invalidate();
@@ -475,9 +509,12 @@ namespace Grafico
         private void btnApagar_Click(object sender, EventArgs e)
         {
             LimparEsperas();
+
+            // percorre a lista de figuras selecionadas
             var atual = figurasSelecionadas.Primeiro;
             while (atual != null)
             {
+                // apaga a figura atual da lista de figuras também
                 figuras.Excluir(atual.Info);
                 figurasSelecionadas.Excluir(atual.Info);
                 atual = atual.Prox;
@@ -489,6 +526,5 @@ namespace Grafico
         {
             Close();
         }
-
     }
 }
